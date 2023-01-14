@@ -52,9 +52,9 @@ modeToggle.addEventListener("change", function () {
 
     r.style.setProperty("--main-color", "white");
     r.style.setProperty("--second-color", "gray");
-    r.style.setProperty("--third-color", "#2155CD");
+    r.style.setProperty("--third-color", "#42C2FF");
     r.style.setProperty("--fourth-color", "#0AA1DD");
-    r.style.setProperty("--fifth-color", "#42C2FF");
+    r.style.setProperty("--fifth-color", "#2155CD");
     r.style.setProperty("--text-color", "black");
     r.style.setProperty("--offmain-color", "lightgray");
     r.style.setProperty("--shadow-color", "gray");
