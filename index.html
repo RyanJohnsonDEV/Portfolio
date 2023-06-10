@@ -7,13 +7,10 @@
 
     <link rel="stylesheet" href="styles.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    <script
+      src="https://kit.fontawesome.com/685c871af1.js"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    ></script>
 
     <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
 
@@ -29,7 +26,7 @@
             <li>
               <a href="#Projects" class="navLink projectsNav">Projects</a>
             </li>
-            <li><a href="#" class="navLink contactNav">Contact</a></li>
+            <li><a href="#Contact" class="navLink contactNav">Contact</a></li>
             <li>
               <label class="switch">
                 <input type="checkbox" class="toggle" />
@@ -39,7 +36,44 @@
               </label>
             </li>
             <li>
-              <div class="btn"><a href="#" class="resumeNav">Resume</a></div>
+              <div class="btn">
+                <a href="#" class="resumeNav">Resume</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="hamburger-menu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dropdown-container">
+          <ul>
+            <li>
+              <a href="#About"
+                ><div class="collapse-item" onclick="removeDropdown()">
+                  About
+                </div></a
+              >
+            </li>
+            <li>
+              <a href="#Projects"
+                ><div class="collapse-item" onclick="removeDropdown()">
+                  Projects
+                </div></a
+              >
+            </li>
+            <li>
+              <a href="#Contact"
+                ><div class="collapse-item" onclick="removeDropdown()">
+                  Contact
+                </div></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><div class="resume collapse-item" onclick="removeDropdown()">
+                  Resume
+                </div></a
+              >
             </li>
           </ul>
         </div>
@@ -50,7 +84,6 @@
       <section id="Heading">
         <div class="header">
           <div class="line-container">
-            <div id="lineh1"></div>
             <div id="lineh2"></div>
             <div id="lineh3"></div>
             <div id="lineh4"></div>
@@ -72,7 +105,9 @@
                 <span class="me-desc">Front-End Developer</span>
               </div>
               <div class="CTA-container">
-                <div class="btn contact-button"><a href="#">Contact Me</a></div>
+                <div class="btn contact-button">
+                  <a href="#Contact">Contact Me</a>
+                </div>
                 <div class="socials-container">
                   <a href="https://github.com/RyanJohnsonDEV" target="_blank"
                     ><i class="socials fa-brands fa-github"></i
@@ -96,15 +131,22 @@
       <div class="ab-section-container">
         <div class="section">
           <h1>About Me</h1>
+          <div class="extLine extending-lineL"></div>
+          <div class="extLine extending-lineR"></div>
           <div class="about-container">
             <div class="image-container">
-              <img src="images/self.jpg" alt="Myself" />
-              <div class="img-box"></div>
+              <img id="bio-img" src="images/self1.jpg" alt="Myself" />
+              <!-- <div class="img-box"></div> -->
+              <div class="img-rightScroll">&gt;</div>
+              <div class="img-leftScroll">&lt;</div>
             </div>
             <div class="bio-container">
               <div class="bio">
                 <p>
-                  Hi! My name is Ryan Johnson. <br />
+                  <span class="bio-intro"
+                    >My name is <span class="bio-name">Ryan Johnson</span></span
+                  >
+                  <br />
                   <br />
                   I am a Front-End Web Developer working with multiple
                   technologies including
@@ -115,21 +157,21 @@
                   <span class="bootstrap">Bootstrap</span>, and
                   <span class="photoshop">Photoshop</span>, and always
                   continuing to learn more! I have an eye for design and color
-                  theory, and I wont rest until the project looks perfect.
+                  theory, and I will not rest until the project looks perfect.
                   <br />
                   <br />
                   Please take a look at my
                   <a href="#Projects">Projects</a> below to see my work! <br />
                   <br />
                   When I'm not programming, I enjoy playing instruments, gaming,
-                  and watching anime. <br />
+                  learning Japanese, and watching anime. <br />
                   <br />
                   Thank you for taking the time to look at my portfolio, and I
                   hope to hear from you soon! Please feel free to
-                  <a href="#">Contact Me</a> anytime.
+                  <a href="#Contact">Contact Me</a> anytime.
                 </p>
               </div>
-              <div class="bio-box"></div>
+              <!-- <div class="bio-box"></div> -->
             </div>
           </div>
         </div>
@@ -142,6 +184,8 @@
       <div class="projects-section-container">
         <div class="section">
           <h1>Projects</h1>
+          <div class="extLine extending-lineL"></div>
+          <div class="extLine extending-lineR"></div>
           <div class="projects-container">
             <div class="project project1">
               <div class="project-img-container">
@@ -177,6 +221,7 @@
                       >Code</a
                     >
                   </div>
+
                   <div class="btn">
                     <a
                       href="https://luxurywindowwashing.com/"
@@ -193,9 +238,9 @@
                 <h3>Muvee</h3>
                 <div class="description">
                   <p>
-                    A fully functioning website that allows users to search for
-                    movies, see ratings, sort based on popularity, release date,
-                    and user-rating, and also includes pagination.
+                    This website utilizes TheMovieDB API and allows users to
+                    search for movies, see ratings, sort based on popularity,
+                    release date, and user-rating, and also includes pagination.
                   </p>
                 </div>
                 <a
@@ -320,6 +365,94 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Contact">
+      <div class="contact-container">
+        <div class="section">
+          <h1>Contact Me</h1>
+          <div class="extLine extending-lineL"></div>
+          <div class="extLine extending-lineR"></div>
+          <div class="contact-form">
+            <form
+              name="contactform"
+              method="post"
+              id="contact_form"
+              onsubmit="show();"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input id="subjectline" name="subject" style="display: none" />
+              <input style="display: none" name="bot-field" />
+              <div class="form-group">
+                <input
+                  type="input"
+                  class="form-control"
+                  id="emailName"
+                  placeholder="Name"
+                  name="name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailAddress"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                  name="email"
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  id="emailBody"
+                  rows="3"
+                  name="message"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" name="submit" id="submit" class="btn">
+                  Submit
+                </button>
+                <div class="success" id="success">
+                  <strong id="notiText"></strong>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Footer">
+      <div class="footer-container">
+        <div class="footer-topText">
+          <div class="footer-name">
+            <h1>Ryan Johnson</h1>
+            <p>RyanTJohnson1995@gmail.com</p>
+          </div>
+          <div class="footer-navlinks">
+            <p>
+              <a href="#About">About</a> <a href="#Projects">Projects</a>
+              <a href="#Contact">Contact</a> <a href="">Resume</a>
+            </p>
+          </div>
+        </div>
+        <div class="footer-bar"></div>
+        <div class="footer-socials">
+          <a href="https://github.com/RyanJohnsonDEV" target="_blank"
+            ><i class="socials fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/ryan-johnson-595991223/"
+            target="_blank"
+            ><i class="socials fa-brands fa-linkedin"></i
+          ></a>
+          <p>ⒸRJohnsonDEV 2023</p>
         </div>
       </div>
     </section>
