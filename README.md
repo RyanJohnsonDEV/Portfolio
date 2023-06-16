@@ -1,6 +1,6 @@
 # Portfolio
 
-#### Website URL: https://rjohnsondev.netlify.app/
+#### Website URL: https://ryantjohnson.dev
 
 ### Languages used:
 
