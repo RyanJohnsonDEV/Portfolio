@@ -5,8 +5,6 @@
 
 const sections = document.querySelectorAll('.section');
 const imgContainer = document.querySelector('.image-container');
-// const img_box = document.querySelector(".img-box");
-// const bioContainer = document.querySelector(".bio");
 const bio_box = document.querySelector('.bio-box');
 const navbar = document.querySelector('.nav');
 const dark = document.querySelector('.fa-moon');
@@ -25,7 +23,7 @@ const subject = document.getElementById('subjectline');
 const r = document.querySelector(':root');
 const imgLeftScroll = document.querySelector('.img-leftScroll');
 const imgRightScroll = document.querySelector('.img-rightScroll');
-const bioImg = document.getElementById('bio-img');
+const carousel = document.getElementById('carousel');
 
 r.style.setProperty('--offmain-color', '#111111');
 
@@ -70,12 +68,6 @@ function checkSection() {
       extLine[1].classList.remove('showing');
     }
   });
-
-  // img_box.style.height = Number(imgContainer.clientHeight - 22) + "px";
-  // img_box.style.width = imgContainer.clientWidth + "px";
-
-  // bio_box.style.height = Number(imgContainer.clientHeight - 22) + "px";
-  // bio_box.style.width = Number(bioContainer.clientWidth + 1) + "px";
 }
 
 window.addEventListener('resize', function () {
@@ -171,19 +163,32 @@ checkWindow();
 
 window.addEventListener('scroll', checkSection);
 
-let imgNum = 1;
+let imgScroll = 0;
+imgLeftScroll.classList.add('scrollDisabled');
+const imageAmount = carousel.children.length;
+
 imgLeftScroll.addEventListener('click', function () {
-  imgNum === 1 ? (imgNum = 5) : imgNum--;
-  bioImg.src = `images/self${imgNum}.jpg`;
+  if (imgScroll < 0) {
+    imgScroll += 100 / imageAmount;
+    carousel.style.transform = `translate(${imgScroll}%, -2%)`;
+    if (imgScroll > (100 / imageAmount) * -1) {
+      imgLeftScroll.classList.add('scrollDisabled');
+    }
+    if (imgScroll > (100 / imageAmount) * (imageAmount - 1) * -1) {
+      imgRightScroll.classList.remove('scrollDisabled');
+    }
+  }
 });
 
 imgRightScroll.addEventListener('click', function () {
-  imgNum === 5 ? (imgNum = 1) : imgNum++;
-  bioImg.src = `images/self${imgNum}.jpg`;
+  if (imgScroll > (100 / imageAmount) * (imageAmount - 1) * -1) {
+    imgScroll -= 100 / imageAmount;
+    carousel.style.transform = `translate(${imgScroll}%, -2%)`;
+    if (imgScroll < 0) {
+      imgLeftScroll.classList.remove('scrollDisabled');
+    }
+    if (imgScroll === (100 / imageAmount) * (imageAmount - 1) * -1) {
+      imgRightScroll.classList.add('scrollDisabled');
+    }
+  }
 });
-
-// img_box.style.height = Number(imgContainer.clientHeight - 22) + 'px';
-// img_box.style.width = imgContainer.clientWidth + 'px';
-
-// bio_box.style.height = Number(imgContainer.clientHeight - 22) + 'px';
-// bio_box.style.width = Number(bioContainer.clientWidth + 1) + 'px';

@@ -577,16 +577,26 @@ input:checked + .slider:before {
 }
 
 .about-container .image-container img {
-  width: 39rem;
-  border-radius: 50px;
-  border: 5px solid var(--third-color);
+  width: 42rem;
   margin-top: 0.5rem;
-  transition: transform 0.4s ease;
-  box-shadow: -20px 20px 20px var(--shadow-color);
+  height: 100%;
+}
+
+.carousel {
+  position: absolute;
+  display: flex;
+  transform: translate(-0%, -2%);
+  transition: transform 0.5s ease-out;
 }
 
 .about-container .image-container {
   position: relative;
+  width: 39rem;
+  height: 39rem;
+  border: 5px solid var(--third-color);
+  border-radius: 50px;
+  box-shadow: -20px 20px 20px var(--shadow-color);
+  overflow: hidden;
 }
 
 .about-container .bio {
@@ -610,16 +620,6 @@ input:checked + .slider:before {
   position: relative;
   transition: transform 0.4s ease;
   box-shadow: -20px 20px 20px var(--shadow-color);
-}
-
-.about-container .img-box {
-  border: 5px solid var(--third-color);
-  position: absolute;
-  z-index: -1;
-  border-radius: 50px;
-  top: 140px;
-  transform: translateX(-6.5%);
-  background-color: var(--shadow-color);
 }
 
 .about-container .img-leftScroll,
@@ -650,6 +650,10 @@ input:checked + .slider:before {
   transform: scale(120%) translateY(-42%);
   cursor: pointer;
   color: var(--fourth-color);
+}
+
+.scrollDisabled {
+  display: none;
 }
 
 .about-container .bio-box {
@@ -708,6 +712,12 @@ input:checked + .slider:before {
 
 .about-container .bio-container .photoshop {
   color: #b1d3ff;
+}
+
+.about-container .bio-container .colortext {
+  font-weight: bold;
+  -webkit-text-stroke-width: 0.7px;
+  -webkit-text-stroke-color: black;
 }
 
 .about-container .bio-container a:hover {
@@ -1076,8 +1086,13 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 690px) {
-  .about-container .image-container img {
+  .about-container .image-container {
     width: 90vw;
+    height: 90vw;
+  }
+
+  .carousel img {
+    width: 100vw !important;
   }
   /* .projects-section-container {
     padding: 3rem 10vw 0;
